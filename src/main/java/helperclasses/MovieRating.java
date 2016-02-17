@@ -22,14 +22,3 @@ public enum MovieRating {
     }
 }
 
-
-class TestExample {
-
-    public static void main( String[] args ) {
-        for (MovieRating r : MovieRating.values ()) {
-            System.out.println ( "rating value:" + r.name () );
-        }
-    }
-
-}
-

@@ -1,3 +1,7 @@
+import helperclasses.MovieEvaluation;
+import helperclasses.MovieRating;
+import helperclasses.MovieGenre;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,14 +12,17 @@ public class Movie {
 
     private String title;
     private String director;
-    private String year;
-    private int genre;
-    private int rating;
-    private int evaluation;
+    private int year;
+    private MovieGenre genre;
+    private MovieRating rating;
+    private MovieEvaluation evaluation;
     private boolean seen;
-    private List<Person> actors;
+    private List<Actor> actors;
 
-    public Movie( String title, String director, String year, int genre, int rating, int evaluation, boolean seen ) {
+    public Movie( String title, String director,
+                  int year, MovieGenre genre,
+                  MovieRating rating, MovieEvaluation evaluation,
+                  boolean seen ) {
         setTitle ( title );
         setDirector ( director );
         setYear ( year );
@@ -23,14 +30,14 @@ public class Movie {
         setRating ( rating );
         setEvaluation ( evaluation );
         setSeen ( seen );
-        this.actors = new ArrayList<Person> ( );
+        this.actors = new ArrayList<Actor> ( );
     }
 
-    public List<Person> getActors() {
+    public List<Actor> getActors() {
         return actors;
     }
 
-    public void setActors( List<Person> actors ) {
+    public void setActors( List<Actor> actors ) {
         this.actors = actors;
     }
 
@@ -39,6 +46,9 @@ public class Movie {
     }
 
     public void setTitle( String title ) {
+        if(title == null){
+            throw new IllegalArgumentException ( "title cannot be null" );
+        }
         this.title = title;
     }
 
@@ -50,35 +60,39 @@ public class Movie {
         this.director = director;
     }
 
-    public String getYear() {
-        return year;
+    public int getYear() {
+         return year;
     }
 
-    public void setYear( String year ) {
+    public void setYear( int year ) {
+        if( year <= 0) throw new IllegalArgumentException ( "year cannot be 0 or smaller" );
         this.year = year;
     }
 
-    public int getGenre() {
+    public MovieGenre getGenre() {
         return genre;
     }
 
-    public void setGenre( int genre ) {
+    public void setGenre( MovieGenre genre ) {
         this.genre = genre;
     }
 
-    public int getRating() {
+    public MovieRating getRating() {
         return rating;
     }
 
-    public void setRating( int rating ) {
+    public void setRating( MovieRating rating ) {
         this.rating = rating;
     }
 
-    public int getEvaluation() {
+    public MovieEvaluation getEvaluation() {
         return evaluation;
     }
 
-    public void setEvaluation( int evaluation ) {
+    public void setEvaluation( MovieEvaluation evaluation ) {
+        if(evaluation == null){
+            throw new IllegalArgumentException ( "MovieEvaluation cannot be empty" );
+        }
         this.evaluation = evaluation;
     }
 

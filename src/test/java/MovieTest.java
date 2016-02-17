@@ -1,19 +1,33 @@
-package helperclasses;
-
+import helperclasses.MovieEvaluation;
+import helperclasses.MovieGenre;
+import helperclasses.MovieRating;
+import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by filipve on 17/02/2016.
  */
-public class MovieTest {
+public class MovieTest extends TestCase {
+    private String title;
+    private String director;
+    private int year;
+    private MovieGenre genre;
+    private MovieRating rating;
+    private MovieEvaluation evaluation;
+    private boolean seen;
+
 
     @Before
     public void setUp() throws Exception {
-
+        title = "The Hobbit 1";
+        director = "Peter Jackson";
+        year = 2012;
+        genre = MovieGenre.ACTION;
+        rating = MovieRating.GENERALAUDIENCE;
+        evaluation = MovieEvaluation.THREESTARS;
+        seen = true;
     }
 
     @After
@@ -27,9 +41,22 @@ public class MovieTest {
     }
 
     @Test
-    public void testSetTitle() throws Exception {
+    public void testSetTitle_titel_is_null() throws Exception {
+        String test = null;
+        Movie movie = new Movie ( "hallo", director, year, genre, rating, evaluation, seen );
+        movie.setTitle ( test );
+
+        assertEquals ( null,movie.getTitle () );
+    }
 
 
+    @Test
+    public void testSetTitle_titel_is_not_null() throws Exception {
+        String test = "hallo";
+        Movie movie = new Movie ( null, director, year, genre, rating, evaluation, seen );
+        movie.setTitle ( test );
+
+        assertEquals ( test,movie.getTitle () );
     }
 
     @Test
