@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by filipve on 17/02/2016.
  */
@@ -10,6 +13,7 @@ public class Movie {
     private int rating;
     private int evaluation;
     private boolean seen;
+    private List<Person> actors;
 
     public Movie( String title, String director, String year, int genre, int rating, int evaluation, boolean seen ) {
         setTitle ( title );
@@ -19,6 +23,15 @@ public class Movie {
         setRating ( rating );
         setEvaluation ( evaluation );
         setSeen ( seen );
+        this.actors = new ArrayList<Person> ( );
+    }
+
+    public List<Person> getActors() {
+        return actors;
+    }
+
+    public void setActors( List<Person> actors ) {
+        this.actors = actors;
     }
 
     public String getTitle() {
@@ -77,9 +90,9 @@ public class Movie {
         this.seen = seen;
     }
 
-    public String gezienOfNiet( boolean seen )
+    public String gezienOfNiet()
     {
-        return seen ? "Ja" : "Nee";
+        return isSeen () ? "Ja" : "Nee";
         // return seen == true dan "Ja" anders "Nee"
 
     }

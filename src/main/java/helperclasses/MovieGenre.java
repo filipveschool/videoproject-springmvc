@@ -5,7 +5,13 @@ package helperclasses;
  */
 public enum MovieGenre {
 
-    ACTION,
-    HORROR,
-    COMEDY
+    ACTION("Action"),
+    HORROR("Horror"),
+    COMEDY("Comedy");
+
+    private String genre;
+
+    MovieGenre( String genre ) {
+        this.genre = genre;
+    }
 }

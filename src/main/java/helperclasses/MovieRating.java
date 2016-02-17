@@ -5,6 +5,8 @@ package helperclasses;
  */
 public enum MovieRating {
 
+    //http://www.ign.com/wikis/content-ratings/MPAA
+
     NOTRATED ( "NR" ),
     GENERALAUDIENCE ( "G" ),
     PARENTALGUIDANCE ( "PG" ),
