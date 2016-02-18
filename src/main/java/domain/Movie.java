@@ -1,3 +1,5 @@
+package domain;
+
 import helperclasses.MovieEvaluation;
 import helperclasses.MovieGenre;
 import helperclasses.MovieRating;
@@ -18,13 +20,13 @@ public class Movie {
     private MovieEvaluation evaluation;
     private boolean seen;
     private List<Actor> actors;
+    private int id;
 
-    //TODO: ID-veld bijhouden voor behoud met databank
-
-    public Movie(String title, String director,
+    public Movie(int id, String title, String director,
                  int year, MovieGenre genre,
                  MovieRating rating, MovieEvaluation evaluation,
                  boolean seen ) {
+        setId(id);
         setTitle ( title );
         setDirector ( director );
         setYear ( year );
@@ -33,6 +35,16 @@ public class Movie {
         setEvaluation ( evaluation );
         setSeen ( seen );
         this.actors = new ArrayList<Actor> ( );
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    //TODO: ID-veld bijhouden voor behoud met databank
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Actor> getActors() {
@@ -113,5 +125,8 @@ public class Movie {
 
     }
 
+    public void addActor(Actor actor){
+
+    }
 
 }
