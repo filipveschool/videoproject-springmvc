@@ -1,5 +1,9 @@
-import helperclasses.GenderPerson;
+import domain.person.Age;
+import domain.person.Person;
+import domain.person.GenderPerson;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +14,13 @@ public class Actor extends Person {
 
     private List<Movie> moviesPlayedIn;
 
-    public Actor(String name, String familyName, int age, GenderPerson gender){
-        super(null,null,0, GenderPerson.MALE);
+    public Actor(String name, String familyName,
+                 Age dateOfBirth, GenderPerson gender){
+        super(null,null, new Age(LocalDate.of(1994, Month.APRIL,20)), GenderPerson.MALE);
+        setDateOfBirth(dateOfBirth);
+        setName(name);
+        setGender(gender);
+        setFamilyName(familyName);
         this.moviesPlayedIn = new ArrayList<Movie> (  );
     }
 
