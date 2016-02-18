@@ -1,3 +1,4 @@
+import domain.Actor;
 import domain.person.Age;
 import domain.person.Person;
 import domain.person.GenderPerson;
@@ -13,7 +14,7 @@ import java.time.Period;
 public class maintest {
 
     public static void main( String[] args ) {
-//Movie m = new Movie ("The Hobbit 1",  );
+//domain.Movie m = new domain.Movie ("The Hobbit 1",  );
 
         LocalDate dateofbirth = LocalDate.of(2010,01,14);
         MonthDay birthday = MonthDay.of(dateofbirth.getMonth(), dateofbirth.getDayOfMonth());
