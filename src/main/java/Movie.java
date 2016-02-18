@@ -1,6 +1,6 @@
 import helperclasses.MovieEvaluation;
-import helperclasses.MovieRating;
 import helperclasses.MovieGenre;
+import helperclasses.MovieRating;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +19,12 @@ public class Movie {
     private boolean seen;
     private List<Actor> actors;
 
-    public Movie( String title, String director,
-                  int year, MovieGenre genre,
-                  MovieRating rating, MovieEvaluation evaluation,
-                  boolean seen ) {
+    //TODO: ID-veld bijhouden voor behoud met databank
+
+    public Movie(String title, String director,
+                 int year, MovieGenre genre,
+                 MovieRating rating, MovieEvaluation evaluation,
+                 boolean seen ) {
         setTitle ( title );
         setDirector ( director );
         setYear ( year );

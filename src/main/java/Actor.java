@@ -11,7 +11,7 @@ public class Actor extends Person {
     private List<Movie> moviesPlayedIn;
 
     public Actor(String name, String familyName, int age, GenderPerson gender){
-        super(null,null,0,GenderPerson.MALE);
+        super(null,null,0, GenderPerson.MALE);
         this.moviesPlayedIn = new ArrayList<Movie> (  );
     }
 

@@ -7,9 +7,8 @@ public abstract class Person {
 
     private String name;
     private String familyName;
-    private int age;
+    private int age; // TODO: Geboortedatum maken aan de hand van berekening uit een datum object
     private GenderPerson gender;
-
 
     public Person( String name, String familyName, int age, GenderPerson gender ) {
         setName ( name );

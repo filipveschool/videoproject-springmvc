@@ -10,6 +10,7 @@ import org.junit.Test;
  * Created by filipve on 17/02/2016.
  */
 public class MovieTest extends TestCase {
+
     private String title;
     private String director;
     private int year;
@@ -43,7 +44,7 @@ public class MovieTest extends TestCase {
     @Test
     public void testSetTitle_titel_is_null() throws Exception {
         String test = null;
-        Movie movie = new Movie ( "hallo", director, year, genre, rating, evaluation, seen );
+        Movie movie = new Movie( "hallo", director, year, genre, rating, evaluation, seen );
         movie.setTitle ( test );
 
         assertEquals ( null,movie.getTitle () );
@@ -53,7 +54,7 @@ public class MovieTest extends TestCase {
     @Test
     public void testSetTitle_titel_is_not_null() throws Exception {
         String test = "hallo";
-        Movie movie = new Movie ( null, director, year, genre, rating, evaluation, seen );
+        Movie movie = new Movie( null, director, year, genre, rating, evaluation, seen );
         movie.setTitle ( test );
 
         assertEquals ( test,movie.getTitle () );

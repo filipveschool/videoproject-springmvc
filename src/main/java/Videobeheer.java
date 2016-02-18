@@ -13,7 +13,7 @@ public class VideoBeheer {
     }
 
     public List<Movie> generateListOfMoviesAlreadySeen() {
-        ArrayList<Movie> moviesSeen = new ArrayList<Movie> ();
+        List<Movie> moviesSeen = new ArrayList<Movie> ();
 
         for (int i = 0; i < movies.size (); i++) {
             if ( movies.get ( i ).isSeen () ) {
@@ -26,7 +26,7 @@ public class VideoBeheer {
     }
 
     public List<Movie> generateListOfMoviesNotSeen() {
-        ArrayList<Movie> moviesNotSeen = new ArrayList<Movie> ();
+        List<Movie> moviesNotSeen = new ArrayList<Movie> ();
 
         for (int i = 0; i < movies.size (); i++) {
             if ( movies.get ( i ).isSeen () == false ) {
