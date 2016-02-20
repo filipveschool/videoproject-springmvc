@@ -18,11 +18,7 @@ public class Actor extends Person {
 
     public Actor(String name, String familyName,
                  Age dateOfBirth, GenderPerson gender) {
-        super(null, null, new Age(LocalDate.of(1994, Month.APRIL, 20)), GenderPerson.MALE);
-        setDateOfBirth(dateOfBirth);
-        setName(name);
-        setGender(gender);
-        setFamilyName(familyName);
+        super(name,familyName,dateOfBirth,gender);
         this.moviesPlayedIn = new ArrayList<Movie>();
     }
 

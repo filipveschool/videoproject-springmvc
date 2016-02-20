@@ -14,11 +14,24 @@ public enum MovieRating {
     RESTRICTED("R"),
     NCSEVENTEEN("NC-17");
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
     private String rating;
 
     MovieRating(String rating) {
         this.rating = rating;
 
+    }
+
+    @Override
+    public String toString() {
+        return getRating().toString();
     }
 }
 

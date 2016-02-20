@@ -12,12 +12,21 @@ public abstract class Person {
     private String familyName;
     private Age dateOfBirth;
     private GenderPerson gender;
+    private int id;
 
     public Person(String name, String familyName, Age dateOfBirth, GenderPerson gender) {
         setName(name);
         setFamilyName(familyName);
         setDateOfBirth(dateOfBirth);
         setGender(gender);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Age getDateOfBirth() {

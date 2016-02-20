@@ -22,11 +22,10 @@ public class Movie {
     private List<Actor> actors;
     private int id;
 
-    public Movie(int id, String title, String director,
+    public Movie(String title, String director,
                  int year, MovieGenre genre,
                  MovieRating rating, MovieEvaluation evaluation,
                  boolean seen) {
-        setId(id);
         setTitle(title);
         setDirector(director);
         setYear(year);
@@ -142,6 +141,15 @@ public class Movie {
     public void addActor(Actor actor) {
 
         getActors().add(actor);
+    }
+
+    @Override
+    public String toString() {
+        return "Film: " + getTitle() + " met als regisseur: " + getDirector()
+        + "uitgebracht in het jaar: " + getYear() + "\n met als genre : " + getGenre().toString() +
+                " heeft als rating: " + getRating().toString() + " en als evaluatie : "
+                + getEvaluation().toString()
+                + " en is gezien: " + gezienOfNiet();
     }
 
 }

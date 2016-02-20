@@ -17,10 +17,14 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
 
     //TODO: db klassen opsplitsen voor actors en movies
 
+    private static int instanceCounterMovies = 0;
+    private static int instanceCounterActors = 0;
     //TODO static maken
     Map<Integer, Movie> beheer;
-
     Map<Integer, Actor> actors;
+    private int counterMovies = 0;
+    private int counterActors = 0;
+
 
     public VideoBeheerDbFake() {
         beheer = new HashMap<Integer, Movie>();
@@ -37,6 +41,11 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
         return movie.getActors();
     }
 
+    public List<Actor> getAllActors(){
+        return new ArrayList<Actor>(actors.values());
+    }
+
+    /* Later Implementeren, is optioneel
     public List<Movie> getAllMoviesFromGenre(MovieGenre genre) {
         List<Movie> movies = new ArrayList<Movie>();
         for (Movie movie : beheer.values()) {
@@ -49,10 +58,16 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
         return movies;
     }
 
+*/
+
+/* Later Implementeren, is optioneel
 
     public List<Movie> getAllMoviesFromMultipleGenres(List<MovieGenre> movieGenres) {
         return null;
     }
+*/
+
+    /* Later Implementeren, is optioneel
 
     public List<Actor> getAllMaleActors() {
         List<Actor> actors = new ArrayList<Actor>();
@@ -63,36 +78,111 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
         return actors;
     }
 
+    */
+
+    /* Later Implementeren, is optioneel
+
     public List<Actor> getAllFemaleActors() {
         return null;
     }
-
-    public void addActor(Actor Actor, Movie movie) {
-
-        List<Actor> movies = movie.getActors();
+*/
 
 
-    }
-
-    public void addActor(Actor actor) {
-
-    }
-
+    /**
+     * CRUD ==> create
+     */
     public void addMovie(Movie movie) {
 
+        instanceCounterMovies++;
+        counterMovies = instanceCounterMovies;
+
         //rekening houden met unieke variabelen voor remove update
-        int maxkey = Collections.max(beheer.keySet());
+        //int maxkey = Collections.max(beheer.keySet());
 
-        beheer.put(maxkey + 1, movie);
+        //beheer.put(maxkey + 1, movie);
+        movie.setId(counterMovies);
+        beheer.put(counterMovies, movie);
 
     }
 
-    public void updateMovie(Movie movie) {
-        beheer.put(movie.getId(), movie);
+    /**
+     * CRUD ==> read
+     */
+    public Movie getMovie(String naam, int jaar) {
+        Movie returnMovie = null;
+
+        for (Movie movie : beheer.values()) {
+            if (movie.getYear() == jaar && movie.getTitle() == naam) {
+                return movie;
+            }
+        }
+
+        return returnMovie;
     }
 
+
+    /**
+     * CRUD ==> update
+     */
+    public void updateMovie(Movie movie, Movie oldMovie) {
+        beheer.put(oldMovie.getId(), movie);
+    }
+
+    /**
+     * CRUD ==> delete
+     */
+    public void deleteMovie(Movie movie) {
+        beheer.remove(movie.getId());
+    }
+
+    /**
+     * CRUD ==> create
+     */
+    public void addActor(Actor actor) {
+        instanceCounterActors++;
+        counterActors = instanceCounterActors;
+
+        actor.setId(counterActors);
+        actors.put(counterActors, actor);
+    }
+
+    /**
+     * CRUD ==> create 2
+     */
+    public void addActor(Actor actor, Movie movie) {
+
+        List<Actor> actorsInMovie = movie.getActors();
+        actorsInMovie.add(actor);
+        movie.setActors(actorsInMovie);
+
+    }
+
+    /**
+     * CRUD ==> read
+     */
+    public Actor getActor(String familieNaam, String voornaam) {
+
+        for (Actor act : actors.values()) {
+            if (act.getName() == voornaam && act.getFamilyName() == familieNaam) {
+                return act;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * CRUD ==> update
+     */
     public void updateActor(Actor actor, Actor oldActor) {
+        actors.put(oldActor.getId(), actor);
+    }
 
+    /**
+     * CRUD ==> delete
+     */
+    public void deleteActor(Actor actor) {
+        actors.remove(actor.getId());
     }
 
 
