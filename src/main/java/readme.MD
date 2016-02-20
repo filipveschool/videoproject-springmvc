@@ -10,6 +10,8 @@
 *
 *
 
+
+
 Vragen voor project:
 
 Hoe moeten we nu database bijhouden?
@@ -23,6 +25,12 @@ Repository op github ok?
 project genoeg tot nu?
 
 wat ontbreekt nog?
+
+
+##tips
+
+altijd met packages werken
+
 
 
 

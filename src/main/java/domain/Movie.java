@@ -25,16 +25,16 @@ public class Movie {
     public Movie(int id, String title, String director,
                  int year, MovieGenre genre,
                  MovieRating rating, MovieEvaluation evaluation,
-                 boolean seen ) {
+                 boolean seen) {
         setId(id);
-        setTitle ( title );
-        setDirector ( director );
-        setYear ( year );
-        setGenre ( genre );
-        setRating ( rating );
-        setEvaluation ( evaluation );
-        setSeen ( seen );
-        this.actors = new ArrayList<Actor> ( );
+        setTitle(title);
+        setDirector(director);
+        setYear(year);
+        setGenre(genre);
+        setRating(rating);
+        setEvaluation(evaluation);
+        setSeen(seen);
+        this.actors = new ArrayList<Actor>();
     }
 
     public int getId() {
@@ -44,6 +44,10 @@ public class Movie {
     //TODO: ID-veld bijhouden voor behoud met databank
 
     public void setId(int id) {
+        if (id < 0) {
+            throw new DomainException("ID mag niet kleiner zijn dan 0");
+        }
+
         this.id = id;
     }
 
@@ -51,7 +55,7 @@ public class Movie {
         return actors;
     }
 
-    public void setActors( List<Actor> actors ) {
+    public void setActors(List<Actor> actors) {
         this.actors = actors;
     }
 
@@ -59,9 +63,9 @@ public class Movie {
         return title;
     }
 
-    public void setTitle( String title ) {
-        if(title == null){
-            throw new IllegalArgumentException ( "title cannot be null" );
+    public void setTitle(String title) {
+        if (title == null || title.isEmpty()) {
+            throw new DomainException("title cannot be null");
         }
         this.title = title;
     }
@@ -70,16 +74,19 @@ public class Movie {
         return director;
     }
 
-    public void setDirector( String director ) {
+    public void setDirector(String director) {
+        if (director == null || director.isEmpty()) {
+            throw new DomainException("director cannot be null or empty");
+        }
         this.director = director;
     }
 
     public int getYear() {
-         return year;
+        return year;
     }
 
-    public void setYear( int year ) {
-        if( year <= 0) throw new IllegalArgumentException ( "year cannot be 0 or smaller" );
+    public void setYear(int year) {
+        if (year <= 0) throw new IllegalArgumentException("year cannot be 0 or smaller");
         this.year = year;
     }
 
@@ -87,7 +94,11 @@ public class Movie {
         return genre;
     }
 
-    public void setGenre( MovieGenre genre ) {
+    public void setGenre(MovieGenre genre) {
+
+        if (genre == null) {
+            throw new DomainException("Genre mag niet leeg zijn");
+        }
         this.genre = genre;
     }
 
@@ -95,7 +106,11 @@ public class Movie {
         return rating;
     }
 
-    public void setRating( MovieRating rating ) {
+    public void setRating(MovieRating rating) {
+
+        if (rating == null) {
+            throw new DomainException("Rating cannot be null");
+        }
         this.rating = rating;
     }
 
@@ -103,9 +118,9 @@ public class Movie {
         return evaluation;
     }
 
-    public void setEvaluation( MovieEvaluation evaluation ) {
-        if(evaluation == null){
-            throw new IllegalArgumentException ( "MovieEvaluation cannot be empty" );
+    public void setEvaluation(MovieEvaluation evaluation) {
+        if (evaluation == null) {
+            throw new DomainException("MovieEvaluation cannot be empty");
         }
         this.evaluation = evaluation;
     }
@@ -114,19 +129,19 @@ public class Movie {
         return seen;
     }
 
-    public void setSeen( boolean seen ) {
+    public void setSeen(boolean seen) {
         this.seen = seen;
     }
 
-    public String gezienOfNiet()
-    {
-        return isSeen () ? "Ja" : "Nee";
+    public String gezienOfNiet() {
+        return isSeen() ? "Ja" : "Nee";
         // return seen == true dan "Ja" anders "Nee"
 
     }
 
-    public void addActor(Actor actor){
+    public void addActor(Actor actor) {
 
+        getActors().add(actor);
     }
 
 }

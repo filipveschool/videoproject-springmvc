@@ -11,7 +11,7 @@ public class Age {
 
     private LocalDate dateOfBirth;
 
-    public Age(LocalDate dateOfBirth){
+    public Age(LocalDate dateOfBirth) {
         setDateOfBirth(dateOfBirth);
     }
 
@@ -20,26 +20,28 @@ public class Age {
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
+
+
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Month getMaandVanGeboorteInTekst(){
+    public Month getMaandVanGeboorteInTekst() {
         return getDateOfBirth().getMonth();
     }
 
-    public int getMaandVanGeboorteInGetal(){
+    public int getMaandVanGeboorteInGetal() {
         return getDateOfBirth().getMonthValue();
     }
 
-    public int getYearVanGeboorte(){
+    public int getYearVanGeboorte() {
         return getDateOfBirth().getYear();
     }
 
-    public Period getLeeftijd(){
-        return Period.between(getDateOfBirth(),LocalDate.now());
+    public Period getLeeftijd() {
+        return Period.between(getDateOfBirth(), LocalDate.now());
     }
 
-    public int getAantalJarenOud(){
+    public int getAantalJarenOud() {
         return getLeeftijd().getYears();
     }
 

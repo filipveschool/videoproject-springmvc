@@ -13,7 +13,7 @@ public enum MovieEvaluation {
 
     private String rating;
 
-    MovieEvaluation( String rating ) {
+    MovieEvaluation(String rating) {
         this.rating = rating;
     }
 }

@@ -19,7 +19,7 @@ public enum GenderPerson {
     private String gender;
 
 
-    GenderPerson( String gender ) {
+    GenderPerson(String gender) {
         this.gender = gender;
     }
 

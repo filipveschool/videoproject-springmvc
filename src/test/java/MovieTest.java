@@ -45,20 +45,20 @@ public class MovieTest extends TestCase {
     @Test
     public void testSetTitle_titel_is_null() throws Exception {
         String test = null;
-        Movie movie = new Movie(1, "hallo", director, year, genre, rating, evaluation, seen );
-        movie.setTitle ( test );
+        Movie movie = new Movie(1, "hallo", director, year, genre, rating, evaluation, seen);
+        movie.setTitle(test);
 
-        assertEquals ( null,movie.getTitle () );
+        assertEquals(null, movie.getTitle());
     }
 
 
     @Test
     public void testSetTitle_titel_is_not_null() throws Exception {
         String test = "hallo";
-        Movie movie = new Movie(1, null, director, year, genre, rating, evaluation, seen );
-        movie.setTitle ( test );
+        Movie movie = new Movie(1, null, director, year, genre, rating, evaluation, seen);
+        movie.setTitle(test);
 
-        assertEquals ( test,movie.getTitle () );
+        assertEquals(test, movie.getTitle());
     }
 
     @Test

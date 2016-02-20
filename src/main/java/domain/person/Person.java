@@ -1,6 +1,8 @@
 package domain.person;
 
 
+import domain.DomainException;
+
 /**
  * Created by filipve on 17/02/2016.
  */
@@ -8,14 +10,13 @@ public abstract class Person {
 
     private String name;
     private String familyName;
-    private int age; // TODO: Geboortedatum maken aan de hand van berekening uit een datum object
     private Age dateOfBirth;
     private GenderPerson gender;
 
     public Person(String name, String familyName, Age dateOfBirth, GenderPerson gender) {
         setName(name);
         setFamilyName(familyName);
-        setAge(age);
+        setDateOfBirth(dateOfBirth);
         setGender(gender);
     }
 
@@ -24,6 +25,10 @@ public abstract class Person {
     }
 
     public void setDateOfBirth(Age dateOfBirth) {
+        if (dateOfBirth == null) {
+            throw new DomainException("DateOfBirth cannot be empty");
+        }
+
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -32,6 +37,10 @@ public abstract class Person {
     }
 
     public void setName(String name) {
+
+        if (name == null || name.isEmpty()) {
+            throw new DomainException("Name cannot be empty");
+        }
         this.name = name;
     }
 
@@ -40,15 +49,11 @@ public abstract class Person {
     }
 
     public void setFamilyName(String familyName) {
+
+        if (familyName == null || familyName.isEmpty()) {
+            throw new DomainException("familyname cannot be empty");
+        }
         this.familyName = familyName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public GenderPerson getGender() {
@@ -56,6 +61,10 @@ public abstract class Person {
     }
 
     public void setGender(GenderPerson gender) {
+
+        if (gender == null) {
+            throw new DomainException("gender cannot be empty");
+        }
         this.gender = gender;
     }
 

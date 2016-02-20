@@ -8,13 +8,34 @@ import domain.Actor;
 
 /**
  * Created by filip on 18/02/2016.
+ *
+ * Dit is mijn facade klasse.
+ *
+ * Hier moeten alle methodes gebruikt worden om te linken met andere klassen.
+ *
+ *
  */
 public class VideoBeheer {
 
     private List<Movie> movies;
+    private List<Actor> actors;
 
     public VideoBeheer() {
         this.movies = new ArrayList<Movie>();
+        this.actors = new ArrayList<Actor>();
+    }
+
+    /**
+     * Hier komt alles van de klasse Movie
+     *
+     */
+
+    /**
+     * Hier wordt een lijst opgehaald uit de DB klasse.
+     * @return een lijst van alle actors die meespelen in 1 film
+     */
+    public List<Actor> getAllActorsFromMovie(){
+return null;
     }
 
     public List<Movie> generateListOfMoviesAlreadySeen() {
