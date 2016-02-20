@@ -95,7 +95,7 @@ public interface OpslagVerbindingInterface {
     /**
      * CRUD ==> read
      */
-    public Actor getActor(String naam, String voornaam);
+    public Actor getActor(String voornaam, String familieNaam);
 
 
     public void updateActor(Actor actor, Actor oldActor);

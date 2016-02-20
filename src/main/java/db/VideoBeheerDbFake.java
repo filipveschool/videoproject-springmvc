@@ -160,9 +160,10 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
     /**
      * CRUD ==> read
      */
-    public Actor getActor(String familieNaam, String voornaam) {
+    public Actor getActor(String voornaam, String familieNaam) {
 
         for (Actor act : actors.values()) {
+            System.out.println("act familyname == : " + act.getFamilyName() + " voornaam " + act.getName() );
             if (act.getName() == voornaam && act.getFamilyName() == familieNaam) {
                 return act;
             }

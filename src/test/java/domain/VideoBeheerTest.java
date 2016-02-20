@@ -15,6 +15,7 @@ import java.time.Month;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by filip on 20/02/2016.
@@ -51,6 +52,8 @@ public class VideoBeheerTest extends TestCase {
         //System.out.println(movie.toString());
 
         actor = new Actor("Ian","Mc Kellen",new Age(LocalDate.of(1939, Month.MAY,25)), GenderPerson.MALE);
+        actor2 = new Actor("Martin","Freeman",new Age(LocalDate.of(1971,Month.SEPTEMBER,8)), GenderPerson.MALE);
+
     }
 
     @Test
@@ -70,7 +73,6 @@ public class VideoBeheerTest extends TestCase {
 
     @Test
     public void test_get_all_actors_from_one_movie()throws Exception{
-        actor2 = new Actor("Martin","Freeman",new Age(LocalDate.of(1971,Month.SEPTEMBER,8)), GenderPerson.MALE);
 
         movie.addActor(actor);
         movie.addActor(actor2);
@@ -157,17 +159,30 @@ vdb.addActor(actor,movie);
 
     @Test
     public void test_get_actor_met_parameters_familienaam_en_voornaam() throws Exception{
-addActorsTestKlasse();
+        addActorsTestKlasse();
         assertEquals(actor,vdb.getActor("Ian","Mc Kellen"));
     }
 
     @Test
     public void test_update_actor() throws Exception{
+Actor act = actor;
+        act.setGender(GenderPerson.FEMALE);
+        vdb.updateActor(act,actor);
+        List<Actor> actorList = vdb.getAllActors();
+        printResultaatLijst(actorList);
 
+        assertEquals(GenderPerson.FEMALE,vdb.getAllActors().get(0).getGender());
     }
 
     @Test
     public void test_delete_actor() throws Exception{
+addActorsTestKlasse();
+        vdb.deleteActor(actor);
+        List<Actor> actorList = vdb.getAllActors();
+        printResultaatLijst(actorList);
+
+        assertNotEquals(1,vdb.getAllActors().get(0).getId());
+
 
     }
 

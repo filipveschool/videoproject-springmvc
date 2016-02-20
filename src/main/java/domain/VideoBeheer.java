@@ -138,8 +138,8 @@ getVideoBeheerDbFake().addActor(actor);
     /**
      * CRUD ==> read
      */
-    public Actor getActor(String familieNaam, String voornaam){
-return getVideoBeheerDbFake().getActor(familieNaam, voornaam);
+    public Actor getActor(String voornaam, String familieNaam){
+return getVideoBeheerDbFake().getActor(voornaam, familieNaam);
     }
 
     /**
