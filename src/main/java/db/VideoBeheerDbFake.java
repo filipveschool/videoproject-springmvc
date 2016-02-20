@@ -20,11 +20,11 @@ public class VideoBeheerDbFake implements OpslagVerbindingInterface {
     //TODO static maken
     Map<Integer, Movie> beheer;
 
-    Map<Integer,Actor> actors;
+    Map<Integer, Actor> actors;
 
     public VideoBeheerDbFake() {
-beheer = new HashMap<Integer, Movie>();
-actors = new HashMap<Integer, Actor>();
+        beheer = new HashMap<Integer, Movie>();
+        actors = new HashMap<Integer, Actor>();
     }
 
     public List<Movie> getAllMovies() {
@@ -41,14 +41,13 @@ actors = new HashMap<Integer, Actor>();
         List<Movie> movies = new ArrayList<Movie>();
         for (Movie movie : beheer.values()) {
 
-            if(movie.getGenre() == genre){
-movies.add(movie);
+            if (movie.getGenre() == genre) {
+                movies.add(movie);
             }
 
         }
         return movies;
     }
-
 
 
     public List<Movie> getAllMoviesFromMultipleGenres(List<MovieGenre> movieGenres) {
@@ -92,14 +91,9 @@ movies.add(movie);
         beheer.put(movie.getId(), movie);
     }
 
-    public void updateActor(Actor actor, Actor oldActor){
+    public void updateActor(Actor actor, Actor oldActor) {
 
     }
-
-
-
-
-
 
 
 }
