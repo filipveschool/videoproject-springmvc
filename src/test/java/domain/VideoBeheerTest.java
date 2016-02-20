@@ -143,7 +143,7 @@ public void test_delete_movie() throws Exception{
     @Test
 public void test_add_actor_met_parameters_actor() throws Exception{
         addActorTestKlasse();
-        assertEquals(1,vdb.getAllMovies().size());
+        assertEquals(1,vdb.getAllActors().size());
     }
 
     @Test
