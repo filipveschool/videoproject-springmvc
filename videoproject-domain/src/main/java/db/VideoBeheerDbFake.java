@@ -1,9 +1,12 @@
 package db;
 
-import domain.person.Actor;
 import domain.Movie;
+import domain.person.Actor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by filip on 18/02/2016.

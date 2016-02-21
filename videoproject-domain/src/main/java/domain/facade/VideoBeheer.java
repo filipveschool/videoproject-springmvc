@@ -1,13 +1,12 @@
 package domain.facade;
 
-import java.util.List;
-
 import db.OpslagVerbindingInterface;
-import db.VideoBeheerDbFake;
 import domain.Movie;
 import domain.factory.DatabaseFactory;
 import domain.factory.DatabaseType;
 import domain.person.Actor;
+
+import java.util.List;
 
 /**
  * Created by filip on 18/02/2016.

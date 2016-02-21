@@ -16,8 +16,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * Created by filip on 20/02/2016.

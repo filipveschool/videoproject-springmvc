@@ -1,7 +1,7 @@
 package db;
 
-import domain.person.Actor;
 import domain.Movie;
+import domain.person.Actor;
 
 import java.util.List;
 
