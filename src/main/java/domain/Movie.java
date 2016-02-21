@@ -1,5 +1,6 @@
 package domain;
 
+import domain.person.Actor;
 import helperclasses.MovieEvaluation;
 import helperclasses.MovieGenre;
 import helperclasses.MovieRating;
@@ -146,7 +147,7 @@ public class Movie {
     @Override
     public String toString() {
         return "Film: " + getTitle() + " met als regisseur: " + getDirector()
-        + "uitgebracht in het jaar: " + getYear() + "\n met als genre : " + getGenre().toString() +
+                + "uitgebracht in het jaar: " + getYear() + "\n met als genre : " + getGenre().toString() +
                 " heeft als rating: " + getRating().toString() + " en als evaluatie : "
                 + getEvaluation().toString()
                 + " en is gezien: " + gezienOfNiet();

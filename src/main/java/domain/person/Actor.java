@@ -1,5 +1,6 @@
-package domain;
+package domain.person;
 
+import domain.Movie;
 import domain.person.Age;
 import domain.person.Person;
 import domain.person.GenderPerson;

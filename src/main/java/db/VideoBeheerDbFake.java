@@ -1,11 +1,8 @@
 package db;
 
-import domain.Actor;
+import domain.person.Actor;
 import domain.Movie;
-import domain.person.Person;
-import helperclasses.MovieGenre;
 
-import java.sql.SQLException;
 import java.util.*;
 
 /**

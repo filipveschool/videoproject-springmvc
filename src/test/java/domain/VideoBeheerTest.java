@@ -1,5 +1,7 @@
 package domain;
 
+import domain.facade.VideoBeheer;
+import domain.person.Actor;
 import domain.person.Age;
 import domain.person.GenderPerson;
 import helperclasses.MovieEvaluation;
