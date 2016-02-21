@@ -41,8 +41,6 @@ public class Movie {
         return id;
     }
 
-    //TODO: ID-veld bijhouden voor behoud met databank
-
     public void setId(int id) {
         if (id < 0) {
             throw new DomainException("ID mag niet kleiner zijn dan 0");

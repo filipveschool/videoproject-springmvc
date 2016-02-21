@@ -1,7 +1,7 @@
 # videoBeheerInternetProgrammeren
 Dit is voor mijn project voor internetprogrammeren
 
-//TODO:
+// TODO:
 
 [] alle facade methoden schrijven, dus de methoden die met de andere klassen connecteren
 [] mijn troubleshooting formulier aanvullen met links en hulp voor connecties enz

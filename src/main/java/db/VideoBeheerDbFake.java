@@ -10,13 +10,13 @@ import java.util.*;
  */
 public class VideoBeheerDbFake implements OpslagVerbindingInterface {
 
-    //TODO interface maken met alleen methodes, en dan de klassen daaraan linken
+    //SOLVED interface maken met alleen methodes, en dan de klassen daaraan linken
 
-    //TODO: db klassen opsplitsen voor actors en movies
+    //Solved door 2 maps te gebruiken: db klassen opsplitsen voor actors en movies
 
     private static int instanceCounterMovies = 0;
     private static int instanceCounterActors = 0;
-    //TODO static maken
+    //Solved static maken
     Map<Integer, Movie> beheer;
     Map<Integer, Actor> actors;
     private int counterMovies = 0;
