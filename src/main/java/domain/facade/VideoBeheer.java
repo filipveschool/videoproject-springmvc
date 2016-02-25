@@ -25,7 +25,7 @@ public class VideoBeheer {
     private DatabaseFactory dbFactory;
 
     public VideoBeheer() {
-        dbFactory = new DatabaseFactory();
+        //dbFactory = new DatabaseFactory();
 
         /*
         Dit is de oude versie, de versie eronder is gemaakt met strategy pattern.
@@ -37,8 +37,10 @@ public class VideoBeheer {
         */
         //videoBeheerDbFake = new VideoBeheerDbFake();
 
-        videoBeheerDbFake = dbFactory.create(DatabaseType.FAKE);
+        //videoBeheerDbFake = dbFactory.create(DatabaseType.FAKE);
 
+        //static aangeroepen
+videoBeheerDbFake = DatabaseFactory.create(DatabaseType.FAKE);
 
         //this.movies = new ArrayList<Movie>();
         //this.actors = new ArrayList<Actor>();
