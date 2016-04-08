@@ -10,9 +10,10 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+
    <welcome-file-list>
        <welcome-file>index.jsp</welcome-file>
-   </welcome-file-list> 
+   </welcome-file-list>
     <!-- http://beginnersbook.com/2014/04/welcome-file-list-in-web-xml/ -->
 
   <filter>

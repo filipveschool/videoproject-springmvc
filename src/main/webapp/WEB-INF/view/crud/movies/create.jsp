@@ -11,11 +11,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Maak je movie hier aan</title>
 </head>
 <body>
 
-<form:form method="post" action="${pageContext.request.contextPath}/moviecontroller/process.htm" modelAttribute="movie" id="movieForm">
+<form:form method="post" action="${pageContext.request.contextPath}/movies/process.htm" modelAttribute="movie" id="movieForm">
 
     <!-- titel -->
     <div class="form-group">
@@ -57,8 +57,12 @@
     </div>
 
     <div class="form-group">
-        <label for="seen">seen</label>
-        <form:input path="seen" id="seen" cssclass="form-control" class="form-control"/>
+        <label class="radio-inline">
+        <form:radiobutton path="seen" id="seen" value="True"/>true
+        </label>
+        <label class="radio-inline">
+        <form:radiobutton path="seen" id="seen" value="False"/>False
+        </label>
     </div>
 
     <div>
