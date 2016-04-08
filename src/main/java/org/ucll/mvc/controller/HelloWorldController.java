@@ -50,7 +50,7 @@ public class HelloWorldController {
         //logger.info("Welcome home! The client locale is {}.", locale);
         return "user";
     }
-
+/*
     @RequestMapping(value = "/showmovies")
     public String showmovies(Model model){
 
@@ -70,13 +70,14 @@ public class HelloWorldController {
         movie.setTitle("King Kong");
 */
 
+    /*
         model.addAttribute("name","Hello Movies!");
         model.addAttribute("greetings", "Show all movies please!");
         model.addAttribute("movies",movies);
 
         return "crud/movies/showmovies";
     }
-
+*/
     /**
      * Om te navigeren naar subpagina's, typ de namen van de subfolders voor de pagina.
      * vb. de methode showmovies,
@@ -108,6 +109,8 @@ public class HelloWorldController {
 
 }
     */
+
+    /*
 @RequestMapping(value = "/addMovie",method = RequestMethod.GET)
 public ModelAndView addMovie(){
 
@@ -127,8 +130,10 @@ modelAndView.addObject("enumValuesGenre",MovieGenre.values());
 movie ==> commandName for form tag
      */
 
-
+/*
 }
+
+    */
 
     @RequestMapping(value = "/processMovie",method = RequestMethod.POST)
     public String addMovie(@ModelAttribute("movie") Movie movie, BindingResult result){
@@ -202,7 +207,7 @@ movie ==> commandName for form tag
 
         return "redirect:/showmovies.htm";
     }
-
+/*
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String editMovie(@ModelAttribute("movie") Movie movie, BindingResult result, ModelMap modelMap,Model model){
 
@@ -217,7 +222,7 @@ movie ==> commandName for form tag
         movieDao.updateMovie(movie);
 
         return "";
-    }
+    }*/
 
 
 

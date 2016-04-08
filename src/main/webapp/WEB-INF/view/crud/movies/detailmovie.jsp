@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: filip
@@ -14,34 +15,35 @@
 
 <div class="container">
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Titel film</th>
-        <th>Director film</th>
-        <th>Jaar film</th>
-        <th>genre film</th>
-        <th>rating film</th>
-        <th>evaluation film</th>
-        <th>gezien of niet</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>${movie.title}</td>
-        <td>${movie.director}</td>
-        <td>${movie.jaar}</td>
-        <td>${movie.genre.toString()}</td>
-        <td>${movie.rating.toString()}</td>
-        <td>${movie.evaluation.toString()}</td>
-        <td>${movie.seen}</td>
-    </tr>
-    </tbody>
-</table>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Titel film</th>
+            <th>Director film</th>
+            <th>Jaar film</th>
+            <th>genre film</th>
+            <th>rating film</th>
+            <th>evaluation film</th>
+            <th>gezien of niet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>${movie.title}</td>
+            <td>${movie.director}</td>
+            <td>${movie.jaar}</td>
+            <td>${movie.genre.toString()}</td>
+            <td>${movie.rating.toString()}</td>
+            <td>${movie.evaluation.toString()}</td>
+            <td>${movie.seen}</td>
+        </tr>
+        </tbody>
+    </table>
 
-    </div>
+    <a class="btn btn-info" href="<c:url value="/movies/showmovies.htm"/>">Show all movies</a>
 
 
+</div>
 
 
 </body>
