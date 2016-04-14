@@ -23,6 +23,7 @@ import java.util.Map;
 
 public class VideoBeheerRelationalDatabase implements OpslagVerbindingInterface {
 
+
     private static int instanceCounterMovies = 0;
     private static int instanceCounterActors = 0;
     //Solved static maken
@@ -44,7 +45,7 @@ public class VideoBeheerRelationalDatabase implements OpslagVerbindingInterface 
 
     }
 
-    
+
 
     public void openConnection() {
 
